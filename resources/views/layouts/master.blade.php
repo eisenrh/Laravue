@@ -6,15 +6,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>Indo Convert | Starter</title>
 
   <link rel="stylesheet" href="/css/app.css">
 </head>
 <body class="hold-transition sidebar-mini">
-<div class="wrapper">
 
-  <!-- Navbar -->
+{{-- wrapper --}}
+<div class="wrapper" id="app">
+
+  {{-- navbar --}}
   <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
@@ -24,7 +27,7 @@
       
     </ul>
 
-    <!-- SEARCH FORM -->
+    {{-- search form --}}
     <form class="form-inline ml-3">
       <div class="input-group input-group-sm">
         <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
@@ -35,10 +38,12 @@
         </div>
       </div>
     </form>
+    {{-- ./search form --}}
 
-    <!-- Right navbar links -->
+    {{-- right navbar links --}}
     <ul class="navbar-nav ml-auto">
-      <!-- Messages Dropdown Menu -->
+
+      {{-- messages dropdown menu --}}
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="fa fa-comments-o"></i>
@@ -46,7 +51,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <a href="#" class="dropdown-item">
-            <!-- Message Start -->
+            {{-- message start --}}
             <div class="media">
               <img src="./img/rocket.png" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
@@ -58,11 +63,12 @@
                 <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 Hours Ago</p>
               </div>
             </div>
-            <!-- Message End -->
+            {{-- ./message end --}}
           </a>
+
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <!-- Message Start -->
+            {{-- message start --}}
             <div class="media">
               <img src="./img/profile.png" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
@@ -74,13 +80,14 @@
                 <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 Hours Ago</p>
               </div>
             </div>
-            <!-- Message End -->
+            {{-- ./message end --}}
           </a>
+          
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <!-- Message Start -->
+            {{-- message start --}}
             <div class="media">
-              <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="./img/profile.png" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Nora Silvester
@@ -90,13 +97,15 @@
                 <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 Hours Ago</p>
               </div>
             </div>
-            <!-- Message End -->
+            {{-- ./message end --}}
           </a>
+
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
         </div>
       </li>
-      <!-- Notifications Dropdown Menu -->
+
+      {{-- notifications dropdown menu --}}
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="fa fa-bell-o"></i>
@@ -123,167 +132,113 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li>
+      {{-- ./notifications dropdown menu --}}
+
+
       <li class="nav-item">
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i
             class="fa fa-th-large"></i></a>
       </li>
     </ul>
   </nav>
-  <!-- /.navbar -->
+  {{-- ./navbar --}}
 
-  <!-- Main Sidebar Container -->
+  {{-- main sidebar container --}}
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="./img/rocket.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-           style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
-    </a>
 
-    <!-- Sidebar -->
+    {{-- brand logo --}}
+    <a href="index3.html" class="brand-link">
+      <img 
+      src="./img/rocket.png" 
+      alt="Indo Convert Logo" 
+      class="brand-image img-circle elevation-3" 
+      style="opacity: .8">
+
+      <span class="brand-text font-weight-light">Indo Convert</span>
+    </a>
+    {{-- ./brand logo --}}
+
+    {{-- sidebar --}}
     <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
+      {{-- sidebar user panel --}}
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="./img/profile.png" class="img-circle elevation-2" alt="User Image">
         </div>
-        <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
-        </div>
+        
+          <router-link to="/profile" class="d-block nav-link">
+            {{ Auth::user()->name }}
+          </router-link>
+        
       </div>
 
-      <!-- Sidebar Menu -->
+      {{-- sidebar menu --}}
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+        <ul class="nav nav-pills nav-sidebar flex-column" 
+        data-widget="treeview" 
+        role="menu" 
+        data-accordion="false">
+
+          <li class="nav-item">
+            <router-link to="/dashboard" class="nav-link">
+              <i class="nav-icon fa fa-tachometer-alt"></i>
               <p>
-                Starter Pages
+                Dashboard
+              </p>
+            </router-link>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-cog"></i>
+              <p>
+                Management
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Active Page</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Inactive Page</p>
-                </a>
-              </li>
+                <router-link to="/user" class="nav-link">
+                  <i class="fa fa-users-cog nav-icon fa-fw"></i>
+                  <p>Users</p>
+                </router-link>
+              </li> 
             </ul>
           </li>
+
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-th"></i>
+              <i class="nav-icon fa fa-power-off"></i>
               <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
+                Logout
               </p>
             </a>
           </li>
+
         </ul>
       </nav>
-      <!-- /.sidebar-menu -->
+      {{-- ./sidebar menu --}}
     </div>
-    <!-- /.sidebar -->
+    {{-- ./sidebar --}}
   </aside>
 
-  <!-- Content Wrapper. Contains page content -->
+  {{-- content wrapper. contains page content --}}
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Starter Page</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Starter Page</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
 
-    <!-- Main content -->
+    {{-- content header (page header) --}} {{-- ./content header --}}
+
+
+    {{-- main content --}}
     <div class="content">
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+        <router-view></router-view>
+        
+      </div>
+    </div> {{-- ./main content --}}
+  </div> {{-- ./content wrapper --}}
+  
 
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's
-                  content.
-                </p>
-
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
-            </div>
-
-            <div class="card card-primary card-outline">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's
-                  content.
-                </p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
-            </div><!-- /.card -->
-          </div>
-          <!-- /.col-md-6 -->
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="m-0">Featured</h5>
-              </div>
-              <div class="card-body">
-                <h6 class="card-title">Special title treatment</h6>
-
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-
-            <div class="card card-primary card-outline">
-              <div class="card-header">
-                <h5 class="m-0">Featured</h5>
-              </div>
-              <div class="card-body">
-                <h6 class="card-title">Special title treatment</h6>
-
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <!-- /.col-md-6 -->
-        </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-
-  <!-- Control Sidebar -->
+  {{-- control sidebar --}}
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
     <div class="p-3">
@@ -291,9 +246,9 @@
       <p>Sidebar content</p>
     </div>
   </aside>
-  <!-- /.control-sidebar -->
+  {{-- ./control sidebar --}}
 
-  <!-- Main Footer -->
+  {{-- main footer --}}
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
@@ -303,7 +258,7 @@
     <strong>Copyright &copy; 2014-2018 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
   </footer>
 </div>
-<!-- ./wrapper -->
+{{-- ./wrapper --}}
 
 <!-- REQUIRED SCRIPTS -->
 
