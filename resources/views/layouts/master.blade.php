@@ -147,7 +147,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
     {{-- brand logo --}}
-    <a href="index3.html" class="brand-link">
+    <a href="{{ url('home') }}" class="brand-link">
       <img 
       src="./img/rocket.png" 
       alt="Indo Convert Logo" 
@@ -181,7 +181,7 @@
 
           <li class="nav-item">
             <router-link to="/dashboard" class="nav-link">
-              <i class="nav-icon fa fa-tachometer-alt"></i>
+              <i class="nav-icon fa fa-tachometer-alt cyan"></i>
               <p>
                 Dashboard
               </p>
@@ -189,8 +189,8 @@
           </li>
 
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-cog"></i>
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-cog green"></i>
               <p>
                 Management
                 <i class="right fa fa-angle-left"></i>
@@ -199,7 +199,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <router-link to="/user" class="nav-link">
-                  <i class="fa fa-users-cog nav-icon fa-fw"></i>
+                  <i class="fa fa-users-cog nav-icon fa-fw orange"></i>
                   <p>Users</p>
                 </router-link>
               </li> 
@@ -207,12 +207,18 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-power-off"></i>
-              <p>
-                Logout
-              </p>
+            <a class="nav-link" href="{{ route('logout') }}" 
+            onclick="event.preventDefault(); 
+                          document.getElementById('logout-form').submit();">
+                    <i class="nav-icon fa fa-power-off red"></i>
+                    <p> 
+                      {{ __('Logout') }} 
+                    </p>
             </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+            </form>
           </li>
 
         </ul>
