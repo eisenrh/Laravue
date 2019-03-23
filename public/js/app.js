@@ -37279,19 +37279,19 @@ var staticRenderFns = [
                   _c(
                     "button",
                     {
-                      staticClass: "btn btn-secondary",
-                      attrs: { type: "button", "data-dismiss": "modal" }
+                      staticClass: "btn btn-primary",
+                      attrs: { type: "button" }
                     },
-                    [_vm._v("Close")]
+                    [_vm._v("Create New User")]
                   ),
                   _vm._v(" "),
                   _c(
                     "button",
                     {
-                      staticClass: "btn btn-primary",
-                      attrs: { type: "button" }
+                      staticClass: "btn btn-secondary",
+                      attrs: { type: "button", "data-dismiss": "modal" }
                     },
-                    [_vm._v("Save changes")]
+                    [_vm._v("Close")]
                   )
                 ])
               ])
@@ -52094,7 +52094,9 @@ __webpack_require__.r(__webpack_exports__);
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); // Vue Form
+// Vue Router
+
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);

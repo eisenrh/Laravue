@@ -15,7 +15,7 @@
         "bootstrap": "^4.0.0",
         "cross-env": "^5.1",
         "jquery": "^3.2",
-        "laravel-mix": "^4.0.7",
+        "laravel-mix": "^4.0.15",
         "lodash": "^4.17.5",
         "popper.js": "^1.12",
         "resolve-url-loader": "^2.3.1",
@@ -23,10 +23,13 @@
         "sass-loader": "^7.1.0",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.9",
-        "vue-vform": "^1.0.4"
+        "vue-vform": "^1.0.4",
+        "webpack-cli": "^3.3.0"
     },
     "dependencies": {
         "admin-lte": "^3.0.0-alpha.2",
+        "font-awesome": "^4.7.0",
+        "jquery-validation": "^1.19.0",
         "vue-router": "^3.0.2"
     }
 }
