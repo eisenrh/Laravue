@@ -52123,7 +52123,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 //     Form,
 //     HasError,
 //     AlertError
-// } from 'vue-vform';
+// } from 'vform';
 // window.Form = Form;
 // Vue.component(HasError.name, HasError)
 // Vue.component(AlertError.name, AlertError)

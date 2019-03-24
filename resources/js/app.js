@@ -13,7 +13,7 @@ window.Vue = require('vue');
 //     Form,
 //     HasError,
 //     AlertError
-// } from 'vue-vform';
+// } from 'vform';
 
 // window.Form = Form;
 // Vue.component(HasError.name, HasError)
