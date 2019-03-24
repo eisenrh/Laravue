@@ -68,7 +68,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <!-- <div class="form-group">
+            <div class="form-group">
               <input
                 v-model="form.username"
                 type="text"
@@ -78,7 +78,7 @@
                 :class="{ 'is-invalid': form.errors.has('name') }"
               >
               <has-error :form="form" field="name"></has-error>
-            </div>-->
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary">Create New User</button>
@@ -93,18 +93,18 @@
 
 <script>
 export default {
-  // data() {
-  //   return {
-  //     form: new Form({
-  //       name: "",
-  //       email: "",
-  //       password: "",
-  //       role: "",
-  //       bio: "",
-  //       photo: ""
-  //     })
-  //   };
-  // },
+  data() {
+    return {
+      form: new Form({
+        name: "",
+        email: "",
+        password: "",
+        role: "",
+        bio: "",
+        photo: ""
+      })
+    };
+  },
 
   mounted() {
     console.log("Component mounted.");

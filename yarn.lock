@@ -922,9 +922,10 @@ autoprefixer@^9.4.2:
     postcss "^7.0.14"
     postcss-value-parser "^3.3.1"
 
-axios@^0.18:
+axios@^0.18.0:
   version "0.18.0"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.18.0.tgz#32d53e4851efdc0a11993b6cd000789d70c05102"
+  integrity sha1-MtU+SFHv3AoRmTts0AB4nXDAUQI=
   dependencies:
     follow-redirects "^1.3.0"
     is-buffer "^1.1.5"
@@ -5426,6 +5427,11 @@ vary@~1.1.2:
 vendors@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/vendors/-/vendors-1.0.2.tgz#7fcb5eef9f5623b156bcea89ec37d63676f21801"
+
+vform@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/vform/-/vform-1.0.0.tgz#8bca811f6380d64089972f3f4a1d9adb35bc0273"
+  integrity sha512-9X17bCzeWW6quND76TxouUgV221gFXqBllLTQjvj8MZgqAmi3bsY578f7EeYI9nvuv2LdyLTW4YcuPlIqqLdDw==
 
 vm-browserify@0.0.4:
   version "0.0.4"
