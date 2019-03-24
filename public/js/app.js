@@ -1956,7 +1956,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  // data() {
+  //   return {
+  //     form: new Form({
+  //       name: "",
+  //       email: "",
+  //       password: "",
+  //       role: "",
+  //       bio: "",
+  //       photo: ""
+  //     })
+  //   };
+  // },
   mounted: function mounted() {
     console.log("Component mounted.");
   }
@@ -37273,7 +37297,7 @@ var staticRenderFns = [
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "modal-body" }, [_vm._v("...")]),
+                _c("div", { staticClass: "modal-body" }),
                 _vm._v(" "),
                 _c("div", { staticClass: "modal-footer" }, [
                   _c(
@@ -52095,6 +52119,14 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); // Vue Form
+// import {
+//     Form,
+//     HasError,
+//     AlertError
+// } from 'vue-vform';
+// window.Form = Form;
+// Vue.component(HasError.name, HasError)
+// Vue.component(AlertError.name, AlertError)
 // Vue Router
 
 
