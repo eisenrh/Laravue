@@ -70,7 +70,7 @@
           <div class="modal-body">
             <div class="form-group">
               <input
-                v-model="form.username"
+                v-model="form.name"
                 type="text"
                 name="name"
                 placeholder="Name"
@@ -78,6 +78,58 @@
                 :class="{ 'is-invalid': form.errors.has('name') }"
               >
               <has-error :form="form" field="name"></has-error>
+            </div>
+
+            <div class="form-group">
+              <input
+                v-model="form.email"
+                type="text"
+                name="email"
+                placeholder="Email Address"
+                class="form-control"
+                :class="{ 'is-invalid': form.errors.has('email') }"
+              >
+              <has-error :form="form" field="email"></has-error>
+            </div>
+
+            <div class="form-group">
+              <input
+                v-model="form.password"
+                type="password"
+                name="password"
+                placeholder="Password"
+                class="form-control"
+                :class="{ 'is-invalid': form.errors.has('password') }"
+              >
+              <has-error :form="form" field="name"></has-error>
+            </div>
+
+            <div class="form-group">
+              <input
+                v-model="form.bio"
+                type="text"
+                name="bio"
+                placeholder="Short bio for user (Optional)."
+                class="form-control"
+                :class="{ 'is-invalid': form.errors.has('bio') }"
+              >
+              <has-error :form="form" field="bio"></has-error>
+            </div>
+
+            <div class="form-group">
+              <select
+                name="role"
+                v-model="form.role"
+                id="role"
+                class="form-control"
+                :class="{ 'is-invalid': form.errors.has('role') }"
+              >
+                <option value>Select Authenticated Role</option>
+                <option value="Super User">Super User</option>
+                <option value="Admin">Admin</option>
+                <option value="User">User</option>
+                <option value="Author">Author</option>
+              </select>
             </div>
           </div>
           <div class="modal-footer">
