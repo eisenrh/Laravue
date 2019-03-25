@@ -165,7 +165,6 @@
         <div class="image">
           <img src="./img/profile.png" class="img-circle elevation-2" alt="User Image">
         </div>
-        
           <router-link to="/profile" class="d-block nav-link">
             {{ Auth::user()->name }}
           </router-link>
