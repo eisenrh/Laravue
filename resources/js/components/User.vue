@@ -32,7 +32,7 @@
                   <td>{{user.name}}</td>
                   <td>{{user.email}}</td>
                   <td>{{user.role}}</td>
-                  <td>{{user.created_at}}</td>
+                  <td>{{user.created_at | dateType1}}</td>
                   <td>
                     <a href="#" class="btn btn-success btn-sm" alt="Edit">
                       <i class="fa fa-edit"></i>

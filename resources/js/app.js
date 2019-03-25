@@ -14,6 +14,7 @@ import {
     HasError,
     AlertError
 } from 'vform';
+import moment from 'moment';
 
 window.Form = Form;
 Vue.component(HasError.name, HasError)
@@ -42,7 +43,11 @@ let routes = [{
 
 const router = new VueRouter({
     routes
-})
+});
+
+Vue.filter('dateType1', function (created) {
+    return moment(created).format('MMMM Do YYYY');
+});
 
 /**
  * The following block of code may be used to automatically register your
